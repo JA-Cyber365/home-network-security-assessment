@@ -24,3 +24,8 @@ To assess the security posture of a personal home network using real tools — i
 ![ip-interface](screenshots/S1.png)
 
 Ran `ip a` to identify the active wireless interface (wlan0) and confirm the local IP address before launching the Nmap reconnaissance scan.
+
+### Ref 2: Nmap Ping Sweep — Host Discovery
+![nmap-ping-sweep](screenshots/02-nmap-ping-sweep.png)
+
+Ran `nmap -sn` across the subnet to discover all active devices. Identified 9 hosts up including a Vantiva USA router, TP-Link access point, Amazon device, Samsung device, and notably a **China Dragon Technology Limited** device — an IPTV device that became the focus of further investigation.
