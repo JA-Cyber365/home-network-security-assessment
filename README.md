@@ -34,3 +34,8 @@ Ran `nmap -sn` across the subnet to discover all active devices. Identified 9 ho
 ![nmap-router-scan](screenshots/03-nmap-router-service-scan.png)
 
 Ran `nmap -sV` against the router (Xfinity Broadband Router Server) to enumerate open ports and running services. Identified open ports on 53/tcp (DNS — dnsmasq 2.83), 80/tcp (HTTP), and 443/tcp (HTTPS). Filtered ports included 22 (SSH), 23 (Telnet), and several high-range ports. Two services returned unrecognized fingerprints flagged for further investigation.
+
+### Ref 4: Scan Results — cat scan_results.txt
+![scan-results](screenshots/04-scan-results-cat.png)
+
+Reviewed saved Nmap scan output from `scan_results.txt`. Confirmed the same open and filtered ports across the target device — 53/tcp (dnsmasq 2.83), 80/tcp and 443/tcp (Xfinity Broadband Router Server). Output saved using `-oN` flag for documentation and evidence purposes.
