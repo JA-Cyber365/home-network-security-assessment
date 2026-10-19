@@ -21,6 +21,6 @@ To assess the security posture of a personal home network using real tools — i
 ## Steps
 
 ### Ref 1: Network Interface Identification
-![ip-interface](screenshots/01-ip-interface.png)
+![ip-interface](screenshots/S1.png)
 
 Ran `ip a` to identify the active wireless interface (wlan0) and confirm the local IP address before launching the Nmap reconnaissance scan.
