@@ -163,4 +163,4 @@ Restricted router management access to reduce the attack surface on the admin in
 | **Local Management** | 	Restricted to two authorised devices by MAC address |
 | **Management Protocol** | HTTPS enforced — encrypted admin traffic on LAN |
 
-![Network Map — Segmented](screenshots/18-router-admin-hardening.png)
+![Router Admin Hardening](screenshots/18-router-admin-hardening.png)
