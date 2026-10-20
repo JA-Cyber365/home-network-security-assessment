@@ -112,9 +112,9 @@ Ran `nmap -sn` against the network after setting up the new router to establish 
 
 Unable to patch CVE-2017-7494 directly due to IPTV firmware constraints, the following compensating controls were implemented on the new TP-Link router.
 
-**Network Segmentation — 3 Isolated VLANs**
+**Network Segmentation — 3 Isolated Networks**
 
-The network was divided into three isolated segments to prevent lateral movement between device types:
+Implemented network segmentation using guest network isolation separating IoT devices from trusted devices on TP-Link AX55 to prevent lateral movement between device types:
 
 | Network | Devices | Purpose |
 |---|---|---|
