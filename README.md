@@ -9,6 +9,7 @@ To assess the security posture of a personal home network using real tools — i
 - Risk exception documentation aligned to NIST SP 800-53
 - Threat modelling and compensating control selection
 - Network segmentation using guest network isolation on TP-Link AX55
+- Router administration hardening (remote management disabled, MAC-based access control, HTTPS enforcement)
 - DNS-level malware blocking and verification
 
 ## Tools Used
