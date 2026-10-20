@@ -8,7 +8,7 @@ To assess the security posture of a personal home network using real tools — i
 - CVE research and vulnerability validation (CVEdetails.com)
 - Risk exception documentation aligned to NIST SP 800-53
 - Threat modelling and compensating control selection
-- VLAN segmentation design and implementation
+- Network segmentation using trusted/guest and IoT network isolation on TP-Link AX55
 - DNS-level malware blocking and verification
 
 ## Tools Used
@@ -16,7 +16,7 @@ To assess the security posture of a personal home network using real tools — i
 - Nmap
 - CVEdetails.com
 - Cloudflare 1.1.1.2 (Malware Blocking Resolver)
-- Home router (VLAN + firewall rule configuration)
+- Home router (TP-Link AX55 (guest network isolation + firewall configuration)
 
 ## Steps
 
@@ -146,7 +146,7 @@ This blocks known malicious domains at the network level for all connected devic
 
 **VLAN Isolation Verification — Ping Test**
 
-To confirm VLAN segmentation was working, a ping test was run from the Kali machine on the main network targeting devices on the isolated IoT and Guest VLANs. Both tests returned `Destination Host Unreachable` with 100% packet loss — confirming cross-VLAN communication is blocked.
+To confirm network segmentation was working, a ping test was run from the Kali machine on the main network targeting devices on the isolated IoT and Guest networks. Both tests returned `Destination Host Unreachable` with 100% packet loss — confirming cross-VLAN communication is blocked.
 
 ![VLAN Ping Test 1](screenshots/16-vlan-ping-test-1.png)
 
