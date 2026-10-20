@@ -86,20 +86,9 @@ Filter returned **CVE-2017-7494** — the only Code Execution CVE for this versi
 | **Device** | IPTV device on home network |
 | **Network Exposure** | Internal LAN only — not internet-facing |
 
-### Step 8 — Risk Assessment
-
-| Field | Detail |
-|---|---|
-| **CVE** | CVE-2017-7494 (SambaCry) |
-| **Affected Service** | Samba smbd 3.X |
-| **CVSS Score** | 10.0 — Critical |
-| **Impact** | Unauthenticated Remote Code Execution via malicious shared library upload |
-| **Device** | IPTV device on home network |
-| **Network Exposure** | Internal LAN only — not internet-facing |
-
 ---
 
-### Step 9 — Risk Exception Document
+### Step 8 — Risk Exception Document
 
 A formal risk exception was written documenting:
 - Risk owner and acceptance
@@ -111,7 +100,7 @@ A formal risk exception was written documenting:
 
 ---
 
-### Step 10 — Pre-Segmentation Network Scan
+### Step 9 — Pre-Segmentation Network Scan
 
 Ran `nmap -sn` against the network after setting up the new router to establish a baseline of all devices reconnected prior to VLAN segmentation being configured.
 
@@ -119,7 +108,7 @@ Ran `nmap -sn` against the network after setting up the new router to establish 
 
 ![Pre-Segmentation Scan](screenshots/10-pre-segmentation-scan.png)
 
-### Step 11 — Compensating Controls: Network Segmentation & DNS Hardening
+### Step 10 — Compensating Controls: Network Segmentation & DNS Hardening
 
 Unable to patch CVE-2017-7494 directly due to IPTV firmware constraints, the following compensating controls were implemented on the new TP-Link router.
 
