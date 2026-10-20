@@ -5,7 +5,7 @@ To assess the security posture of a personal home network using real tools — i
 
 ## Skills Learned
 - Network reconnaissance and host discovery using Nmap
-- CVE research and vulnerability validation (NVD, CVEdetails.com)
+- CVE research and vulnerability validation (CVEdetails.com)
 - Risk exception documentation aligned to NIST SP 800-53
 - Threat modelling and compensating control selection
 - VLAN segmentation design and implementation
