@@ -55,7 +55,7 @@ With `smbd 3.X` identified, I moved to CVEdetails.com to research known vulnerab
 
 Used the Vendor/Product/Version Search to query `samba / Samba / 3.*` — targeting the exact version branch found on the device.
 
-![CVEdetails Version Search](screenshots/06-cvedetails-version-search.png)
+![CVEdetails Version Search](screenshots/06-cvedetails-samba-product-search.png)
 
 **Step 6b — Version List Results**
 
