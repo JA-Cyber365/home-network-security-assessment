@@ -39,3 +39,10 @@ Ran `nmap -sV` against the router (Xfinity Broadband Router Server) to enumerate
 ![scan-results](screenshots/04-scan-results-cat.png)
 
 Reviewed saved Nmap scan output from `scan_results.txt`. Confirmed the same open and filtered ports across the target device — 53/tcp (dnsmasq 2.83), 80/tcp and 443/tcp (Xfinity Broadband Router Server). Output saved using `-oN` flag for documentation and evidence purposes.
+
+### Ref 5: Nmap Service Version Scan — IPTV Device (Samba Discovery)
+![samba-version](screenshots/05-nmap-samba-version.png)
+
+Ran `nmap -sV` against the IPTV device (Shenzhen Shiningworth Technology). Discovered **Samba smbd 3.X - 4.X** running on both 139/tcp (netbios-ssn) and 445/tcp (netbios-ssn), with a BaseHTTPServer on 5357/tcp. `Service Info: Host: ANDROID` confirms end-of-life Android firmware — patching unavailable. This finding triggered CVE research.
+
+> **Note:** The original service version scan was conducted on September 18, 2026 alongside the initial assessment. The screenshot was not captured at the time and was recreated on October 19, 2026 using the same command against the same device, which remains active on the network. Results are consistent with the original findings.
