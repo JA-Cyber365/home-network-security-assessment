@@ -14,7 +14,7 @@ To assess the security posture of a personal home network using real tools — i
 ## Tools Used
 - Kali Linux
 - Nmap
-- NVD / CVEdetails.com
+- CVEdetails.com
 - Cloudflare 1.1.1.2 (Malware Blocking Resolver)
 - Home router (VLAN + firewall rule configuration)
 
@@ -85,3 +85,11 @@ Filter returned **CVE-2017-7494** — the only Code Execution CVE for this versi
 | **Impact** | Unauthenticated Remote Code Execution via malicious shared library upload |
 | **Device** | IPTV device on home network |
 | **Network Exposure** | Internal LAN only — not internet-facing |
+
+### Step 10 — Pre-Segmentation Network Scan
+
+Ran `nmap -sn` against the network after setting up the new router to establish a baseline of all devices reconnected prior to VLAN segmentation being configured.
+
+> ⚠️ *Note: This scan was performed after the IPTV device was physically disconnected from the Rogers ISP router and prior to VLAN segmentation being configured on the new router. The 6 hosts shown represent all devices reconnected to the network at this stage — the IPTV device is absent because it had not yet been reconnected.*
+
+![Pre-Segmentation Scan](screenshots/10-pre-segmentation-scan.png)
