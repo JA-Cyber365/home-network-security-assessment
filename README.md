@@ -111,7 +111,7 @@ Ran `nmap -sn` against the network after setting up the new router to establish 
 
 ### Step 10 — Compensating Controls: Network Segmentation & DNS Hardening
 
-Unable to patch CVE-2017-7494 directly due to IPTV firmware constraints, the following compensating controls were implemented on the new TP-Link router.
+Unable to patch CVE-2017-7494 directly due to IPTV firmware constraints, the following compensating controls were implemented on the TP-Link AX55.
 
 **Network Segmentation — 3 Isolated Networks**
 
