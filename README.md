@@ -46,3 +46,31 @@ Reviewed saved Nmap scan output from `scan_results.txt`. Confirmed the same open
 Ran `nmap -sV` against the IPTV device (Shenzhen Shiningworth Technology). Discovered **Samba smbd 3.X - 4.X** running on both 139/tcp (netbios-ssn) and 445/tcp (netbios-ssn), with a BaseHTTPServer on 5357/tcp. `Service Info: Host: ANDROID` confirms end-of-life Android firmware — patching unavailable. This finding triggered CVE research.
 
 > **Note:** The original service version scan was conducted on September 18, 2026 alongside the initial assessment. The screenshot was not captured at the time and was recreated on October 19, 2026 using the same command against the same device, which remains active on the network. Results are consistent with the original findings.
+
+### Step 6 — CVE Research: Identifying the Vulnerability
+
+With `smbd 3.X` identified, I moved to CVEdetails.com to research known vulnerabilities for this version.
+
+**Step 6a — Version Search**
+
+Used the Vendor/Product/Version Search to query `samba / Samba / 3.*` — targeting the exact version branch found on the device.
+
+![CVEdetails Version Search](screenshots/06-cvedetails-version-search.png)
+
+**Step 6b — Version List Results**
+
+Results returned the full 3.X version branch. Each sub-version carried 49–63 known vulnerabilities — confirming this was a high-risk service.
+
+![CVEdetails Version List](screenshots/07-cvedetails-version-list.png)
+
+**Step 6c — Filtering for High-Impact CVEs**
+
+Navigated into Samba 3.5.0 and filtered by **2017 / Code Execution** to isolate the highest severity findings.
+
+![Impact Type Filter](screenshots/08-cvedetails-impact-filter.png)
+
+**Step 6d — CVE-2017-7494 Identified**
+
+Filter returned **CVE-2017-7494** — the only Code Execution CVE for this version in 2017. CVSS score: **10.0 (Critical)**. EPSS: **99.45%**. Listed as Known Exploited and used in ransomware campaigns.
+
+![CVE-2017-7494 Found](screenshots/09-cvedetails-cve-2017-7494.png)
