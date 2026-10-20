@@ -158,11 +158,9 @@ To confirm network segmentation was working, a ping test was run from the Kali m
 Restricted router management access to reduce the attack surface on the admin interface:
 
 | Control | Detail |
-|---|---|---|
-| Main (5G/2.4G) | Laptops, phones | Trusted devices |
-| IoT (5G/2.4G) | TVs, IPTV, Firestick | Isolated untrusted IoT |
-| Guest (Camera_2G/5G) | Security cameras | Isolated surveillance |
+|---|---|
+| **Remote Management** | Disabled — no internet-facing admin access |
+| **Local Management** | 	Restricted to two authorised devices by MAC address |
+| **Management Protocol** | HTTPS enforced — encrypted admin traffic on LAN |
 
-All SSIDs hidden via WPA2/WPA3 encryption to reduce network visibility.
-
-![Network Map — Segmented](screenshots/11-network-map-segmented.png)
+![Network Map — Segmented](screenshots/18-router-admin-hardening.png)
