@@ -74,3 +74,14 @@ Navigated into Samba 3.5.0 and filtered by **2017 / Code Execution** to isolate 
 Filter returned **CVE-2017-7494** — the only Code Execution CVE for this version in 2017. CVSS score: **10.0 (Critical)**. EPSS: **99.45%**. Listed as Known Exploited and used in ransomware campaigns.
 
 ![CVE-2017-7494 Found](screenshots/09-cvedetails-cve-2017-7494-detail.png)
+
+### Step 7 — Risk Assessment
+
+| Field | Detail |
+|---|---|
+| **CVE** | CVE-2017-7494 (SambaCry) |
+| **Affected Service** | Samba smbd 3.X |
+| **CVSS Score** | 10.0 — Critical |
+| **Impact** | Unauthenticated Remote Code Execution via malicious shared library upload |
+| **Device** | IPTV device on home network |
+| **Network Exposure** | Internal LAN only — not internet-facing |
