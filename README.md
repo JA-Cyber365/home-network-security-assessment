@@ -143,3 +143,11 @@ Configured Cloudflare's malware-blocking DNS on the router DHCP server:
 This blocks known malicious domains at the network level for all connected devices.
 
 ![DNS Malware Blocking](screenshots/15-dns-malware-blocking.png)
+
+**VLAN Isolation Verification — Ping Test**
+
+To confirm VLAN segmentation was working, a ping test was run from the Kali machine on the main network targeting devices on the isolated IoT and Guest VLANs. Both tests returned `Destination Host Unreachable` with 100% packet loss — confirming cross-VLAN communication is blocked.
+
+![VLAN Ping Test 1](screenshots/16-vlan-ping-test-1.png)
+
+![VLAN Ping Test 2](screenshots/17-vlan-ping-test-2.png)
