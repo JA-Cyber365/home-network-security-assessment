@@ -148,6 +148,6 @@ This blocks known malicious domains at the network level for all connected devic
 
 To confirm network segmentation was working, a ping test was run from the Kali machine on the main network targeting devices on the isolated IoT and Guest networks. Both tests returned `Destination Host Unreachable` with 100% packet loss — confirming cross-network communication is blocked.
 
-![VLAN Ping Test 1](screenshots/16-vlan-ping-test-1.png)
+![Ping Test 1](screenshots/16-vlan-ping-test-1.png)
 
-![VLAN Ping Test 2](screenshots/17-vlan-ping-test-2.png)
+![Ping Test 2](screenshots/17-vlan-ping-test-2.png)
