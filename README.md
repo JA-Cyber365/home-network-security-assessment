@@ -93,3 +93,39 @@ Ran `nmap -sn` against the network after setting up the new router to establish 
 > ⚠️ *Note: This scan was performed after the IPTV device was physically disconnected from the Rogers ISP router and prior to VLAN segmentation being configured on the new router. The 6 hosts shown represent all devices reconnected to the network at this stage — the IPTV device is absent because it had not yet been reconnected.*
 
 ![Pre-Segmentation Scan](screenshots/10-pre-segmentation-scan.png)
+
+### Step 11 — Compensating Controls: Network Segmentation & DNS Hardening
+
+Unable to patch CVE-2017-7494 directly due to IPTV firmware constraints, the following compensating controls were implemented on the new TP-Link router.
+
+**Network Segmentation — 3 Isolated VLANs**
+
+The network was divided into three isolated segments to prevent lateral movement between device types:
+
+| Network | Devices | Purpose |
+|---|---|---|
+| Main (5G/2.4G) | Laptops, phones | Trusted devices |
+| IoT (5G/2.4G) | TVs, IPTV, Firestick | Isolated untrusted IoT |
+| Guest (Camera_2G/5G) | Security cameras | Isolated surveillance |
+
+All SSIDs hidden via WPA2/WPA3 encryption to reduce network visibility.
+
+![Network Map — Segmented](screenshots/11-network-map-segmented.png)
+
+![IoT Network Configuration](screenshots/12-iot-network-config.png)
+
+![Guest Camera Network Configuration](screenshots/13-guest-camera-network-config.png)
+
+![Main Wireless Settings](screenshots/14-main-wireless-settings.png)
+
+---
+
+**DNS Malware Blocking — Cloudflare 1.1.1.2**
+
+Configured Cloudflare's malware-blocking DNS on the router DHCP server:
+- **Primary DNS:** 1.1.1.2 — Cloudflare malware blocking
+- **Secondary DNS:** 1.0.0.2 — Cloudflare malware blocking fallback
+
+This blocks known malicious domains at the network level for all connected devices.
+
+![DNS Malware Blocking](screenshots/15-dns-malware-blocking.png)
