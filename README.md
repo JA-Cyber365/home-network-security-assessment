@@ -21,27 +21,27 @@ To assess the security posture of a personal home network using real tools — i
 
 ## Steps
 
-### Step 1: Network Interface Identification
+### Step 1 — Network Interface Identification
 ![ip-interface](screenshots/01-ip-interface.png)
 
 Ran `ip a` to identify the active wireless interface (wlan0) and confirm the local IP address before launching the Nmap reconnaissance scan.
 
-### Step 2: Nmap Ping Sweep — Host Discovery
+### Step 2 — Nmap Ping Sweep — Host Discovery
 ![nmap-ping-sweep](screenshots/02-nmap-ping-sweep.png)
 
 Ran `nmap -sn` across the subnet to discover all active devices. Identified 9 hosts up including a Vantiva USA router, TP-Link access point, Amazon device, Samsung device, and notably a **China Dragon Technology Limited** device — an IPTV device that became the focus of further investigation.
 
-### Step 3: Nmap Service Version Scan — Router
+### Step 3 — Nmap Service Version Scan — Router
 ![nmap-router-scan](screenshots/03-nmap-router-service-scan.png)
 
 Ran `nmap -sV` against the router (Xfinity Broadband Router Server) to enumerate open ports and running services. Identified open ports on 53/tcp (DNS — dnsmasq 2.83), 80/tcp (HTTP), and 443/tcp (HTTPS). Filtered ports included 22 (SSH), 23 (Telnet), and several high-range ports. Two services returned unrecognized fingerprints flagged for further investigation.
 
-### Step 4: Scan Results — cat scan_results.txt
+### Step 4 — Scan Results — cat scan_results.txt
 ![scan-results](screenshots/04-scan-results-cat.png)
 
 Reviewed saved Nmap scan output from `scan_results.txt`. Confirmed the same open and filtered ports across the target device — 53/tcp (dnsmasq 2.83), 80/tcp and 443/tcp (Xfinity Broadband Router Server). Output saved using `-oN` flag for documentation and evidence purposes.
 
-### Step 5: Nmap Service Version Scan — IPTV Device (Samba Discovery)
+### Step 5 — Nmap Service Version Scan — IPTV Device (Samba Discovery)
 ![samba-version](screenshots/05-nmap-samba-version.png)
 
 Ran `nmap -sV` against the IPTV device (Shenzhen Shiningworth Technology). Discovered **Samba smbd 3.X - 4.X** running on both 139/tcp (netbios-ssn) and 445/tcp (netbios-ssn), with a BaseHTTPServer on 5357/tcp. `Service Info: Host: ANDROID` confirms end-of-life Android firmware — patching unavailable. This finding triggered CVE research.
