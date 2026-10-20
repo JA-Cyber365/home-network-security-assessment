@@ -152,3 +152,17 @@ To confirm network segmentation was working, a ping test was run from the Kali m
 ![Ping Test 1](screenshots/16-vlan-ping-test-1.png)
 
 ![Ping Test 2](screenshots/17-vlan-ping-test-2.png)
+
+**Router Administration Hardening**
+
+Restricted router management access to reduce the attack surface on the admin interface:
+
+| Control | Detail |
+|---|---|---|
+| Main (5G/2.4G) | Laptops, phones | Trusted devices |
+| IoT (5G/2.4G) | TVs, IPTV, Firestick | Isolated untrusted IoT |
+| Guest (Camera_2G/5G) | Security cameras | Isolated surveillance |
+
+All SSIDs hidden via WPA2/WPA3 encryption to reduce network visibility.
+
+![Network Map — Segmented](screenshots/11-network-map-segmented.png)
