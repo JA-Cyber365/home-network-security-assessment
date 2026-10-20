@@ -61,16 +61,16 @@ Used the Vendor/Product/Version Search to query `samba / Samba / 3.*` — target
 
 Results returned the full 3.X version branch. Each sub-version carried 49–63 known vulnerabilities — confirming this was a high-risk service.
 
-![CVEdetails Version List](screenshots/07-cvedetails-version-list.png)
+![CVEdetails Version List](screenshots/07-cvedetails-samba-versions.png)
 
 **Step 6c — Filtering for High-Impact CVEs**
 
 Navigated into Samba 3.5.0 and filtered by **2017 / Code Execution** to isolate the highest severity findings.
 
-![Impact Type Filter](screenshots/08-cvedetails-impact-filter.png)
+![Impact Type Filter](screenshots/08-cvedetails-samba-350-cve-2017.png)
 
 **Step 6d — CVE-2017-7494 Identified**
 
 Filter returned **CVE-2017-7494** — the only Code Execution CVE for this version in 2017. CVSS score: **10.0 (Critical)**. EPSS: **99.45%**. Listed as Known Exploited and used in ransomware campaigns.
 
-![CVE-2017-7494 Found](screenshots/09-cvedetails-cve-2017-7494.png)
+![CVE-2017-7494 Found](screenshots/09-cvedetails-cve-2017-7494-detail.png)
