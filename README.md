@@ -1,7 +1,7 @@
 # Home Network Security Assessment & Hardening
 
 ## Objective
-To assess the security posture of a personal home network using real tools: identifying active devices, validating vulnerabilities against public CVE databases, documenting findings and risk decisions aligned to NIST SP 800-53, and implementing **and testing** compensating controls where patching was unavailable.
+To assess the security posture of a personal home network using real tools: identifying active devices, validating vulnerabilities against public CVE databases, documenting findings and risk decisions aligned to NIST SP 800-53, and implementing and testing compensating controls where patching was unavailable.
 
 The project ran in two phases:
 
