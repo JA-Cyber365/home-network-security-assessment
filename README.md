@@ -137,7 +137,7 @@ Implemented network segmentation using guest network isolation separating IoT de
 | IoT (5G/2.4G) | TVs, IPTV, Firestick | Isolated untrusted IoT |
 | Guest (Camera_2G/5G) | Security cameras | Isolated surveillance |
 
-All networks used WPA2/WPA3 encryption. SSIDs were also hidden; this reduces casual visibility only and is not relied on as a security control, because hidden networks remain discoverable with standard Wi-Fi tools.
+Encryption: the main network and IoT 2.4 GHz used WPA2-PSK (AES); IoT 5 GHz and the camera network used WPA2/WPA3 mixed mode. The IoT and camera SSIDs were hidden (the main network was not); hiding reduces casual visibility only and is not relied on as a security control, because hidden networks remain discoverable with standard Wi-Fi tools.
 
 ![Network Map — Segmented](screenshots/11-network-map-segmented.png)
 
