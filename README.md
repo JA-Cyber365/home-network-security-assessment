@@ -177,7 +177,7 @@ Restricted router management access to reduce the attack surface on the admin in
 | **Local Management** | 	Restricted to two authorised devices by MAC address |
 | **Management Protocol** | HTTPS enforced — encrypted admin traffic on LAN |
 
-![Router Admin Hardening](screenshots/18-router-admin-hardening.png)
+![Router Admin Hardening](18-router-admin-hardening.png)
 
 **Phase 1 limitations, identified later:**
 - The IPTV box shared the IoT network with TVs and a streaming stick, so it was isolated from trusted devices but not from other IoT devices
