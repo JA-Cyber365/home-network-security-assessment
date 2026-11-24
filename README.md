@@ -178,3 +178,9 @@ Restricted router management access to reduce the attack surface on the admin in
 | **Management Protocol** | HTTPS enforced — encrypted admin traffic on LAN |
 
 ![Router Admin Hardening](screenshots/18-router-admin-hardening.png)
+
+**Phase 1 limitations, identified later:**
+- The IPTV box shared the IoT network with TVs and a streaming stick, so it was isolated from trusted devices but not from other IoT devices
+- One TV was later found on the **main** network, contrary to the documented policy
+- Segmentation was limited to the consumer router's built-in guest/IoT features; there was no firewall rule-level control and no port-level testing
+- The risk exception listed "ongoing monitoring of IoT traffic" with no supporting evidence
