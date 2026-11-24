@@ -29,7 +29,11 @@ The project ran in two phases:
 - Phase 1: consumer Wi-Fi 6 router (guest/IoT network isolation)
 - Phase 2: OpenWrt-based Wi-Fi 7 router (GL.iNet admin panel + LuCI)
 
-## Steps
+---
+
+# Phase 1: Assessment & Initial Controls (original router)
+
+> Phase 1 is kept as the historical record. The router used in this phase has since been retired; see [Phase 2](#phase-2-router-upgrade-quarantine-vlan--re-tested-controls).
 
 ### Step 1 — Network Interface Identification
 ![ip-interface](screenshots/01-ip-interface.png)
