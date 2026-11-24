@@ -125,11 +125,11 @@ Ran `nmap -sn` against the network after setting up the Phase 1 router to establ
 
 ### Step 10 — Compensating Controls: Network Segmentation & DNS Hardening
 
-Unable to patch CVE-2017-7494 directly due to IPTV firmware constraints, the following compensating controls were implemented on the TP-Link AX55.
+Unable to patch CVE-2017-7494 directly due to IPTV firmware constraints, the following compensating controls were implemented on the Phase 1 router.
 
 **Network Segmentation — 3 Isolated Networks**
 
-Implemented network segmentation using guest network isolation separating IoT devices from trusted devices on TP-Link AX55 to prevent lateral movement between device types:
+Implemented network segmentation using guest network isolation separating IoT devices from trusted devices on the Phase 1 router to prevent lateral movement between device types:
 
 | Network | Devices | Purpose |
 |---|---|---|
@@ -137,7 +137,7 @@ Implemented network segmentation using guest network isolation separating IoT de
 | IoT (5G/2.4G) | TVs, IPTV, Firestick | Isolated untrusted IoT |
 | Guest (Camera_2G/5G) | Security cameras | Isolated surveillance |
 
-All SSIDs hidden via WPA2/WPA3 encryption to reduce network visibility.
+All networks used WPA2/WPA3 encryption. SSIDs were also hidden; this reduces casual visibility only and is not relied on as a security control, because hidden networks remain discoverable with standard Wi-Fi tools.
 
 ![Network Map — Segmented](screenshots/11-network-map-segmented.png)
 
