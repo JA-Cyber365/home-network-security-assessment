@@ -1,13 +1,14 @@
 # Home Network Security Assessment & Hardening
 
 ## Objective
-To assess the security posture of a personal home network using real tools: identifying active devices, validating vulnerabilities against public CVE databases, documenting findings and risk decisions aligned to NIST SP 800-53, and implementing and testing compensating controls where patching was unavailable.
+To assess the security posture of a personal home network using real tools: identifying active devices, validating vulnerabilities against public CVE databases, documenting findings and risk decisions aligned to NIST SP 800-53, and implementing **and testing** compensating controls where patching was unavailable.
 
 The project ran in two phases:
 
-Phase	Period	Summary
-Phase 1	Sept–Oct 2026	Assessment, CVE research, risk exception, and compensating controls on the original consumer router
-Phase 2	Nov 2026	Router replaced. The vulnerable device was moved to a dedicated quarantine VLAN, IoT and cameras segmented, lost controls restored, and every control re-tested under formal change records
+| Phase | Period | Summary |
+|---|---|---|
+| **Phase 1** | Sept–Oct 2026 | Assessment, CVE research, risk exception, and compensating controls on the original consumer router |
+| **Phase 2** | Nov 2026 | Router replaced. The vulnerable device was moved to a dedicated quarantine VLAN, IoT and cameras segmented, lost controls restored, and every control re-tested under formal change records |
 
 ## Skills Learned
 - Network reconnaissance and host discovery using Nmap
