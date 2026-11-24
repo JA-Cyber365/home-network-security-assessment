@@ -12,12 +12,15 @@ The project ran in two phases:
 
 ## Skills Learned
 - Network reconnaissance and host discovery using Nmap
-- CVE research and vulnerability validation (CVEdetails.com)
-- Risk exception documentation aligned to NIST SP 800-53
+- CVE research and vulnerability validation (NVD, CVEdetails.com)
+- Risk exception documentation aligned to NIST SP 800-53, with inherent vs. residual risk rating
 - Threat modelling and compensating control selection
-- Network segmentation using guest network isolation on TP-Link AX55
-- Router administration hardening (remote management disabled, MAC-based access control, HTTPS enforcement)
-- DNS-level malware blocking and verification
+- VLAN segmentation and deny-by-default firewall zone design (OpenWrt/LuCI)
+- Change management: change records, rollback planning, evidence collection
+- Control testing, including TTL analysis to prove which device answered a scan
+- DNS-level malware blocking, with verification by comparison testing
+- Router management hardening and control substitution
+- Asset inventory reconciliation and a recurring detective control
 
 ## Tools Used
 - Kali Linux
