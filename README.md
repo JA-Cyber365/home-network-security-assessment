@@ -117,9 +117,9 @@ A formal risk exception was written documenting:
 
 ### Step 9 — Pre-Segmentation Network Scan
 
-Ran `nmap -sn` against the network after setting up the new router to establish a baseline of all devices reconnected prior to network segmentation being configured.
+Ran `nmap -sn` against the network after setting up the Phase 1 router to establish a baseline of all devices reconnected prior to network segmentation being configured.
 
-> ⚠️ *Note: This scan was performed after the IPTV device was physically disconnected from the Rogers ISP router and prior to network segmentation being configured on the new router. The 6 hosts shown represent all devices reconnected to the network at this stage — the IPTV device is absent because it had not yet been reconnected.*
+> ⚠️ *Note: This scan was performed after the IPTV device was physically disconnected from the Rogers ISP router and prior to network segmentation being configured on the Phase 1 router. The 6 hosts shown represent all devices reconnected to the network at this stage — the IPTV device is absent because it had not yet been reconnected.*
 
 ![Pre-Segmentation Scan](screenshots/10-pre-segmentation-scan.png)
 
