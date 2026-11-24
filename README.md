@@ -23,11 +23,11 @@ The project ran in two phases:
 - Asset inventory reconciliation and a recurring detective control
 
 ## Tools Used
-- Kali Linux
-- Nmap
-- CVEdetails.com
-- Cloudflare 1.1.1.2 (Malware Blocking Resolver)
-- TP-Link AX55 (guest network isolation + firewall configuration)
+- Kali Linux: Nmap, dig, ping, curl
+- CVEdetails.com / NVD
+- Cloudflare 1.1.1.2 (malware-blocking resolver)
+- Phase 1: consumer Wi-Fi 6 router (guest/IoT network isolation)
+- Phase 2: OpenWrt-based Wi-Fi 7 router (GL.iNet admin panel + LuCI)
 
 ## Steps
 
