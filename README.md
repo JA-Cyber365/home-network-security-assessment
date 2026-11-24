@@ -111,7 +111,7 @@ A formal risk exception was written documenting:
 - Compensating controls in place
 - Acceptance timeline and review date
 
-📄 [View Risk Exception Document](risk-exception/CVE-2017-7494-risk-exception.md)
+📄 [View Risk Exception Document (current version 2.0)](risk-exception/CVE-2017-7494-risk-exception.md)
 
 ---
 
