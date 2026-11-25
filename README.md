@@ -193,9 +193,13 @@ Restricted router management access to reduce the attack surface on the admin in
 
 ## Why Phase 2: Risk Treatment Follows Budget
 
-Phase 1 was the best treatment possible on the hardware available. In November 2026 an OpenWrt-based router capable of **real VLANs and per-zone firewall rules** became affordable in a **Black Friday sale**, so the risk could be lowered further.
+## Why Phase 2: Risk Treatment Follows Budget
 
-> Security decisions are cost-benefit decisions. The level of risk you can reduce depends on the budget available to reduce it. Phase 1 accepted more residual risk because that was the affordable option. When a stronger control became affordable, the risk was re-treated and re-rated.
+Phase 1 was the best treatment possible on the hardware available, but the consumer router couldn't create a true VLAN or per-zone firewall rules. A router that could was outside the budget, so the upgrade **had to wait until it was 40% off in Amazon's Black Friday sale in November 2026**.
+
+During that wait, the higher residual risk was **formally accepted** through the [risk exception](risk-exception/CVE-2017-7494-risk-exception.md), with the Phase 1 compensating controls in place. When the router became affordable, the risk was re-treated, re-tested and re-rated (Medium → Low).
+
+> Risk is managed within budget. When the ideal control can't be funded, the risk is accepted on the record, mitigated with what is affordable, and revisited when resources allow. Phase 1 and Phase 2 are the same risk, treated twice at two budget levels.
 
 All Phase 2 work was done under formal change records with rollback plans and evidence:
 
