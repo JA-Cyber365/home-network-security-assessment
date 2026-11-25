@@ -155,8 +155,6 @@ Configured Cloudflare's malware-blocking DNS on the router DHCP server:
 - **Primary DNS:** 1.1.1.2 — Cloudflare malware blocking
 - **Secondary DNS:** 1.0.0.2 — Cloudflare malware blocking fallback
 
-- DNS filtering was configured but not verified, and devices using their own DNS servers could bypass it
-
 ![DNS Malware Blocking](screenshots/15-dns-malware-blocking.png)
 
 **Network Isolation Verification — Ping Test**
