@@ -182,7 +182,7 @@ Restricted router management access to reduce the attack surface on the admin in
 - One TV was later found on the **main** network, contrary to the documented policy
 - Segmentation was limited to the consumer router's built-in guest/IoT features; there was no firewall rule-level control and no port-level testing
 - The risk exception listed "ongoing monitoring of IoT traffic" with no supporting evidence
-
+- DNS filtering was configured but not verified, and devices using their own DNS servers could bypass it
 
 ---
 
