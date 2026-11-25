@@ -229,3 +229,28 @@ Controls are documented against **NIST SP 800-53** (the specific safeguards) and
 | Protect (PR) | PR.PS Platform Security | SI-2, CM-3, CM-7 | Firmware patching, change control, SSH off |
 | Protect (PR) | PR.AA Access Control | AC-3, AC-17 | Admin restricted by zone, remote access off |
 | Protect (PR) | PR.DS Data Security | SC-8 | HTTPS-only administration |
+
+
+## CHG-001: IPTV Quarantine VLAN
+
+The vulnerable IPTV box was moved to its **own VLAN on a dedicated switch port**, with a firewall zone that forwards only to the internet and accepts nothing in from any other zone. Router firmware was patched to the latest stable release before the build.
+
+![Firewall defaults and zones](screenshots/chg-001-iptv-quarantine/09-firewall-defaults-and-zones.png)
+
+*Global default-deny, with every zone forwarding only to `wan`. No zone forwards into IPTV.*
+
+**Testing (trusted network → IPTV device):**
+
+![Nmap SambaCry ports](screenshots/chg-001-iptv-quarantine/14-test-nmap-445.png)
+
+*Ports 139 and 445, the SambaCry attack surface, return `closed` with **`reset ttl 64`**. A TTL of 64 shows the reset came from the router's firewall one hop away; a reply from the device itself would arrive at TTL 63. The scan never reached the vulnerable service.*
+
+| Test | Result |
+|---|---|
+| Positive control (ping router) | ✅ Works |
+| Ping IPTV device | ✅ Rejected by router |
+| Nmap 139/445 | ✅ Closed by router (TTL 64) |
+| Nmap top 100 ports | ✅ 100/100 closed, 0 open |
+| Configuration survives reboot | ✅ Verified |
+
+**Scope:** the inbound path (the one the exploit needs) is **verified by testing**. Outbound isolation (IPTV → trusted) is enforced by firewall policy and **verified by configuration review only**.
