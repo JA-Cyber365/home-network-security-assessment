@@ -59,8 +59,8 @@
 
 - TVs and streaming stick moved to the IoT network; cameras moved to the camera network; all devices functional
 - A TV previously found on the **trusted** network (matched by MAC) now leases from the IoT subnet, which corrects a deviation from the earlier policy
-- **Inventory reconciled** from the live client list. Unidentified devices were resolved as rotating private MAC addresses (Apple devices) and a privacy-focused phone that randomizes its MAC by design. One prior device is no longer connected and is being monitored
-- Open item: streaming stick MAC confirmation
+- **Inventory reconciled** from the live client list. Unidentified devices were resolved as rotating private MAC addresses (Apple devices) and a privacy-focused phone that randomizes its MAC by design. One prior device (MAC prefix: Nintendo, likely a game console) is no longer connected; if it reconnects it will be classified as IoT, not trusted
+- Streaming stick confirmed by MAC prefix (Amazon Technologies, Nmap MAC vendor database)
 
 ## 7. Verification & Testing
 
