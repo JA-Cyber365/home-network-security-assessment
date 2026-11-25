@@ -254,3 +254,32 @@ The vulnerable IPTV box was moved to its **own VLAN on a dedicated switch port**
 | Configuration survives reboot | ✅ Verified |
 
 **Scope:** the inbound path (the one the exploit needs) is **verified by testing**. Outbound isolation (IPTV → trusted) is enforced by firewall policy and **verified by configuration review only**.
+
+
+## CHG-002: IoT & Camera Segmentation
+
+The Phase 1 policy was carried over: IoT and cameras each got their own network, subnet and firewall zone, with **AP Isolation** and **Block WAN Subnets** enabled. Cameras were kept separate from other IoT because of their higher sensitivity (in-home video). A TV previously found on the trusted network was moved to IoT. Camera viewing works through the vendor cloud, so no inbound exception was needed.
+
+![Camera test](screenshots/chg-002-iot-cameras/cam-04-test-blocked.png)
+
+*From the trusted network, the camera's ports (including 554/RTSP video streaming) are closed by the router's firewall.*
+
+## CHG-003: Restoring Lost Controls
+
+**Replacing the router silently removed Phase 1 controls**: DNS malware blocking, admin hardening, and restricted admin access. CHG-003 restored and tested them.
+
+| Phase 1 control | Phase 2 implementation | Tested |
+|---|---|---|
+| Remote management off | Remote access off; vendor cloud management not enrolled | ✅ |
+| HTTPS admin | Force HTTPS (admin panel and LuCI); SSH disabled (on by default) | ✅ |
+| Admin restricted by **MAC address** | Admin restricted by **network zone**: untrusted zones can't reach it. Stronger, because MACs can be spoofed | ✅ |
+| DNS malware blocking | 1.1.1.2 / 1.0.0.2 + **override for all clients** + DNS rebinding protection | ✅ |
+| "Monitoring" (no evidence) | **Monthly connected-client review**, first completed 2026-11-22 | ✅ |
+
+![Admin blocked from IoT](screenshots/chg-003-hardening-dns/hard-03b.png)
+
+*From the IoT network, the router address where the admin panel listens refuses the connection.*
+
+![DNS override verified](screenshots/chg-003-hardening-dns/dns-03b-override-verified.png)
+
+*A query sent directly to an unfiltered public resolver still returns `0.0.0.0`: the router intercepts and filters DNS even for devices that try to bypass it.*
