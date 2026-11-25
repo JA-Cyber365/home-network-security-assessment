@@ -185,7 +185,9 @@ Restricted router management access to reduce the attack surface on the admin in
 - Segmentation was limited to the consumer router's built-in guest/IoT features; there was no firewall rule-level control and no port-level testing
 - The risk exception listed "ongoing monitoring of IoT traffic" with no supporting evidence
 
+
 ---
+
 
 # Phase 2: Router Upgrade, Quarantine VLAN & Re-tested Controls
 
