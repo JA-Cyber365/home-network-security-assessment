@@ -184,3 +184,46 @@ Restricted router management access to reduce the attack surface on the admin in
 - One TV was later found on the **main** network, contrary to the documented policy
 - Segmentation was limited to the consumer router's built-in guest/IoT features; there was no firewall rule-level control and no port-level testing
 - The risk exception listed "ongoing monitoring of IoT traffic" with no supporting evidence
+
+---
+
+# Phase 2: Router Upgrade, Quarantine VLAN & Re-tested Controls
+
+## Why Phase 2: Risk Treatment Follows Budget
+
+Phase 1 was the best treatment possible on the hardware available. In November 2026 an OpenWrt-based router capable of **real VLANs and per-zone firewall rules** became affordable in a **Black Friday sale**, so the risk could be lowered further.
+
+> Security decisions are cost-benefit decisions. The level of risk you can reduce depends on the budget available to reduce it. Phase 1 accepted more residual risk because that was the affordable option. When a stronger control became affordable, the risk was re-treated and re-rated.
+
+All Phase 2 work was done under formal change records with rollback plans and evidence:
+
+| Change | Scope | Record |
+|---|---|---|
+| **CHG-001** | Router replacement + IPTV quarantine VLAN | [CHG-001](change-records/CHG-001-iptv-quarantine.md) |
+| **CHG-002** | IoT and camera network segmentation | [CHG-002](change-records/CHG-002-iot-camera-segmentation.md) |
+| **CHG-003** | Management hardening + DNS malware blocking | [CHG-003](change-records/CHG-003-router-hardening-dns.md) |
+
+## Network Design (Phase 2)
+
+| Zone | Subnet | Devices | Can reach | Reachable from |
+|---|---|---|---|---|
+| Trusted | `x.x.8.x/24` | Laptops, phones | Internet, router admin | — |
+| Camera network | `x.x.9.x/24` | Cameras ×2 | Internet only | **Nothing** |
+| IoT network | `x.x.10.x/24` | TVs, streaming stick | Internet only | **Nothing** |
+| **IPTV quarantine** | `x.x.30.x/24` (VLAN 30) | Vulnerable IPTV box | Internet only (+ DHCP/DNS) | **Nothing** |
+
+Global firewall defaults: **Input REJECT / Forward REJECT**. A zone can only reach what is explicitly allowed.
+
+## Framework Alignment
+
+Controls are documented against **NIST SP 800-53** (the specific safeguards) and summarized against **NIST CSF 2.0** (the outcomes they support):
+
+| CSF 2.0 Function | Category | SP 800-53 controls | Work |
+|---|---|---|---|
+| Govern (GV) | Risk management | — | Risk exception with named owner, review cycle and triggers |
+| Identify (ID) | ID.RA Risk Assessment | RA-3, RA-5 | CVE research, inherent/residual risk rating |
+| Identify (ID) | ID.AM Asset Management | CM-8 | Monthly connected-client review |
+| Protect (PR) | PR.IR Infrastructure Resilience | SC-7, SC-7(5), AC-4 | VLAN quarantine, deny-by-default zones |
+| Protect (PR) | PR.PS Platform Security | SI-2, CM-3, CM-7 | Firmware patching, change control, SSH off |
+| Protect (PR) | PR.AA Access Control | AC-3, AC-17 | Admin restricted by zone, remote access off |
+| Protect (PR) | PR.DS Data Security | SC-8 | HTTPS-only administration |
