@@ -191,7 +191,6 @@ Restricted router management access to reduce the attack surface on the admin in
 
 # Phase 2: Router Upgrade, Quarantine VLAN & Re-tested Controls
 
-## Why Phase 2: Risk Treatment Follows Budget
 
 ## Why Phase 2: Risk Treatment Follows Budget
 
