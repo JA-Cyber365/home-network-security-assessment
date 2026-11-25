@@ -283,3 +283,28 @@ The Phase 1 policy was carried over: IoT and cameras each got their own network,
 ![DNS override verified](screenshots/chg-003-hardening-dns/dns-03b-override-verified.png)
 
 *A query sent directly to an unfiltered public resolver still returns `0.0.0.0`: the router intercepts and filters DNS even for devices that try to bypass it.*
+
+
+## Results: Phase 1 vs. Phase 2
+
+| | Phase 1 | Phase 2 |
+|---|---|---|
+| IPTV isolation | Shared IoT Wi-Fi | **Dedicated VLAN + firewall zone** |
+| Firewall control | Vendor guest/IoT isolation | **Deny-by-default zones, explicit rules** |
+| Testing | Ping only | **Ping + port scans + TTL analysis + positive controls** |
+| DNS filtering | Configured | **Configured + verified + bypass blocked** |
+| Admin restriction | MAC allow-list | **Zone-based (spoofing-resistant)** |
+| Change control | Informal | **3 change records with rollback + evidence** |
+| Residual risk (CVE-2017-7494) | Medium | **Low** (inherent: High) |
+
+## Lessons Learned
+1. **List the controls before you replace the device.** The router swap silently removed controls listed in the risk exception. A control carry-over check is now part of the change process.
+2. **A failed test isn't automatically a pass.** One test was invalidated because the client's VPN and browser permissions blocked the request before it reached the firewall. It was re-run, and the invalid attempt was kept in the record.
+3. **"Closed" needs interpreting.** TTL analysis distinguished "the firewall blocked it" from "the device refused it."
+4. **Claims need evidence.** An unsupported monitoring claim was withdrawn and replaced with a control that has evidence behind it.
+5. **Risk follows budget.** The same risk was treated twice, at two levels, as resources allowed.
+
+## Future Work
+- Inside-out test from the quarantine VLAN (IPTV → trusted / router admin)
+- Self-hosted camera recording server to remove vendor-cloud dependency, which needs its own risk comparison
+- Replace the IPTV device (resolution target: April 2027)
