@@ -62,8 +62,9 @@ Ran `nmap -sV` against the IPTV device (Shenzhen Shiningworth Technology). Disco
 
 > **Note:** The original service version scan was conducted on September 18, 2026 alongside the initial assessment. The screenshot was not captured at the time and was recreated on October 19, 2026 using the same command against the same device, which remains active on the network. Results are consistent with the original findings.
 
-### Step 6 — CVE Research: Identifying the Vulnerability
+> **Note on vendor names:** the IPTV box has two network interfaces with MAC prefixes from different vendors. The device MAC shown in its settings carries a *China Dragon Technology Limited* prefix (the vendor seen in the September sweep, Step 2), while its Ethernet interface carries a *Shenzhen Shiningworth Technology* prefix (seen in Step 5 and Phase 2). Both belong to the same device, verified from the device's settings and the Nmap MAC vendor database.
 
+### Step 6 — CVE Research: Identifying the Vulnerability
 With `smbd 3.X` identified, I moved to CVEdetails.com to research known vulnerabilities for this version.
 
 **Step 6a — Version Search**
