@@ -276,7 +276,7 @@ The Phase 1 policy was carried over: IoT and cameras each got their own network,
 | DNS malware blocking | 1.1.1.2 / 1.0.0.2 + **override for all clients** + DNS rebinding protection | ✅ |
 | "Monitoring" (no evidence) | **Monthly connected-client review**, first completed 2026-11-22 | ✅ |
 
-![Admin blocked from IoT](screenshots/chg-003-hardening-dns/hard-03b.png)
+<img src="screenshots/chg-003-hardening-dns/hard-03b.png" alt="Admin blocked from IoT" width="300">
 
 *From the IoT network, the router address where the admin panel listens refuses the connection.*
 
